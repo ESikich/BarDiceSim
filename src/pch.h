@@ -1,0 +1,1 @@
+#ifndef PCH_H#define PCH_H#include "Die.h"#include "Cup.h"#include "CupHandler.h"#include <cstdlib>#include <iostream>#include <fstream>#include <time.h>#include <vector>#endif
