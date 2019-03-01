@@ -13,13 +13,13 @@ public:
 	Die dice_[5] ={Die(), Die(), Die(), Die(), Die()};
 
 	void Reset();
-	void Roll();
-	void Evaluate();
-	void HoldDice();
+	void Shake();
+/*	void Evaluate();
+	void HoldDice();*/
 	void ShowDice();
-	void DieValueCount(int *);
+	/*void DieValueCount(int *);
 	void CalculateScore(int *);
-	int GetMode(int *);
+	int GetMode(int *);*/
 
 	Cup();
 	Cup(bool);

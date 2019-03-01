@@ -5,12 +5,12 @@
 using std::cout;
 using std::endl;
 
-void Cup::Roll() {
+void Cup::Shake(){
 	for (int d = 0; d < 5; d++) {
 		dice_[d].Roll();
 	}
 }
-
+/*
 void Cup::DieValueCount(int * dvc) {
 	for (int i = 0; i < 5; i++) {
 		dvc[dice_[i].Value()]++;
@@ -77,7 +77,7 @@ void Cup::HoldDice() {
 		}
 	}
 }
-
+*/
 void Cup::ShowDice() {
 	for (int i = 0; i < 5; i++) {
 		cout << dice_[i].Value() << " ";
@@ -86,19 +86,15 @@ void Cup::ShowDice() {
 }
 
 void Cup::Reset() {
-	goal_ = 0;
-	score_ = 0;
 	for (int i = 0; i < 5; i++) {
 		dice_[i].Reset();
 	}
 }
 
 Cup::Cup() {
-	farming_ = false;
 	Reset();
 }
 
 Cup::Cup(bool f) {
-	farming_ = f;
 	Reset();
 }
