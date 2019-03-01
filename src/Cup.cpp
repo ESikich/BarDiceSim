@@ -13,7 +13,7 @@ void Cup::Roll() {
 
 void Cup::DieValueCount(int * dvc) {
 	for (int i = 0; i < 5; i++) {
-		dvc[dice_[i].value_]++;
+		dvc[dice_[i].Value()]++;
 	}
 }
 
@@ -54,7 +54,7 @@ void Cup::Evaluate() {
 	int diceCount[7] = {0, 0, 0, 0, 0, 0, 0};
 
 	for (int i = 0; i < 5; i++) {
-		diceCount[dice_[i].value_]++;
+		diceCount[dice_[i].Value()]++;
 	}
 
 	if (diceCount[1] > 0) {
@@ -65,14 +65,14 @@ void Cup::Evaluate() {
 void Cup::HoldDice() {
 	if (farming_ == true) {
 		for (int i = 0; i < 5; i++) {
-			if (dice_[i].value_ == 1 || dice_[i].value_ == goal_) {
-				dice_[i].holding_ = true;
+			if (dice_[i].Value() == 1 || dice_[i].Value() == goal_) {
+				dice_[i].Hold();
 			}
 		}
 	}else {
 		for (int i = 0; i < 5; i++) {
-			if (dice_[i].value_ == 1) {
-				dice_[i].holding_ = true;
+			if (dice_[i].Value() == 1) {
+				dice_[i].Hold();
 			}
 		}
 	}
@@ -80,7 +80,7 @@ void Cup::HoldDice() {
 
 void Cup::ShowDice() {
 	for (int i = 0; i < 5; i++) {
-		cout << dice_[i].value_ << " ";
+		cout << dice_[i].Value() << " ";
 	}
 	cout << endl;
 }
@@ -89,8 +89,7 @@ void Cup::Reset() {
 	goal_ = 0;
 	score_ = 0;
 	for (int i = 0; i < 5; i++) {
-		dice_[i].value_ = 0;
-		dice_[i].holding_ = false;
+		dice_[i].Reset();
 	}
 }
 

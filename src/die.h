@@ -9,7 +9,7 @@ public:
 	void Roll();
 	void Reset();
 	bool Held();
-	bool Hold();
+	void Hold();
 	int Value();
 	
 	Die();
