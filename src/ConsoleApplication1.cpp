@@ -12,8 +12,14 @@ using std::cout;
 using std::endl;
 using std::atoi;
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv){
+	
+	if(argc < 3){
+		cout << "Incorrect number of arguments." << endl;
+		cout << "Usage - dice [players] [score] [shakes]" << endl;
+		return 1;
+	}
+	
 	srand((unsigned int)time(NULL));
 	
 	int numPlayers = 2;
@@ -28,21 +34,21 @@ int main(int argc, char **argv)
 	numRolls = atoi(argv[3]);
 	game.InitPlayers(numPlayers);
 
-//	for (int h = 0; h < 20; h++) {
-		//topScore = scoreList[h];
-		for (int rounds = 0; rounds < numRounds; rounds++) {
-			game.TakeTurns(numRolls);
-			game.CheckScores();			
-			game.CheckWinner(topScore);
-			game.Reset();
-		}
+	//	for (int h = 0; h < 20; h++) {
+	//topScore = scoreList[h];
+	for (int rounds = 0; rounds < numRounds; rounds++) {
+		game.TakeTurns(numRolls);
+		game.CheckScores();			
+		game.CheckWinner(topScore);
+		game.Reset();
+	}
 
-		cout << "Score - " << topScore << " in " << numRolls << endl;
-		cout << "Wins - " << game.wins_ << "  Losses - " << game.losses_ << endl;
-		float percentage = ((float)game.wins_ / numRounds) * 100;
-		cout <<"Total - " << percentage << "%" << endl;
-		game.wins_ = 0;
-		game.losses_ = 0;
+	cout << "Score - " << topScore << " in " << numRolls << endl;
+	cout << "Wins - " << game.wins_ << "  Losses - " << game.losses_ << endl;
+	float percentage = ((float)game.wins_ / numRounds) * 100;
+	cout <<"Total - " << percentage << "%" << endl;
+	game.wins_ = 0;
+	game.losses_ = 0;
 	//}
 
 	cout << "Complete.";
