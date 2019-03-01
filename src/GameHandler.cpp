@@ -1,11 +1,5 @@
 #include "GameHandler.h"
 
-void GameHandler::TakeTurn(Cup& cup, int rolls) {
-	for (int i = 0; i < rolls; i++) {
-		Shake(cup);
-	}
-}
-
 void GameHandler::TakeTurns(int rolls) {
 	for (std::vector<Player>::iterator it = player_->begin(); it != player_->end(); ++it) {
 		for (int i = 0; i < rolls; i++) {

@@ -23,7 +23,6 @@ public:
 	bool playerWin_;
 	vector<Player>* player_;
 
-	void TakeTurn(Cup&, int);
 	void TakeTurns(int);
 	void Shake(vector<Cup>&);
 	void InitPlayers(vector<Player>*);
