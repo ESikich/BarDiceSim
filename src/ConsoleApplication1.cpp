@@ -5,7 +5,7 @@
 #include <vector>
 #include "Cup.h"
 #include "CupHandler.h"
-#include "die.h"
+#include "Die.h"
 
 using std::vector;
 using std::cout;

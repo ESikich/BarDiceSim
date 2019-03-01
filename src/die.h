@@ -2,12 +2,16 @@
 #define DIE_H
 
 class Die{
-public:
 	int value_;
 	bool holding_;
-
+	
+public:
 	void Roll();
-
+	void Reset();
+	bool Held();
+	bool Hold();
+	int Value();
+	
 	Die();
 	~Die();
 };

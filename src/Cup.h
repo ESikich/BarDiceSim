@@ -1,7 +1,7 @@
 #ifndef CUP_H
 #define CUP_H
 
-#include "die.h"
+#include "Die.h"
 
 class Cup
 {
