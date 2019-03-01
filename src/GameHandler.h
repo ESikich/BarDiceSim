@@ -26,7 +26,6 @@ public:
 	void TakeTurns(int);
 	void InitPlayers(vector<Player>*);
 	void CheckScores();
-	void Shake(Cup&);
 	void CheckWinner(int);
 	void Reset();
 	

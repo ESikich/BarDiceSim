@@ -62,10 +62,6 @@ void GameHandler::Reset(){
 	}
 }
 
-void GameHandler::Shake(Cup& cup) {
-	cup.Shake();
-}
-
 GameHandler::GameHandler(){
 	topScore_ = 56;
 	tempWinner_ = -1;
