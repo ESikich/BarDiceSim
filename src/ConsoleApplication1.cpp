@@ -13,8 +13,7 @@ using std::endl;
 using std::atoi;
 
 int main(int argc, char **argv){
-	
-	if(argc < 3){
+	if(argc < 4 || argc > 4){
 		cout << "Incorrect number of arguments." << endl;
 		cout << "Usage - dice [players] [score] [shakes]" << endl;
 		return 1;

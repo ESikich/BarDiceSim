@@ -1,5 +1,4 @@
 #include "CupHandler.h"
-#include "Cup.h"
 
 void CupHandler::TakeTurn(Cup& cup, int rolls) {
 	for (int i = 0; i < rolls; i++) {
