@@ -24,7 +24,6 @@ public:
 	vector<Player>* player_;
 
 	void TakeTurns(int);
-	void Shake(vector<Cup>&);
 	void InitPlayers(vector<Player>*);
 	void CheckScores();
 	void Shake(Cup&);

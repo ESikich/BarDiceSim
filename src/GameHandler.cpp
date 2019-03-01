@@ -62,10 +62,6 @@ void GameHandler::Reset(){
 	}
 }
 
-void GameHandler::Shake(std::vector<Cup>& cup) {
-
-}
-
 void GameHandler::Shake(Cup& cup) {
 	cup.Shake();
 }
