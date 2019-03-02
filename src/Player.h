@@ -4,6 +4,8 @@
 #include "Cup.h"
 
 class Player{
+	int GetMode(int *) const;
+	
 public:
 	Cup cup_;
 	bool farming_;
@@ -14,9 +16,7 @@ public:
 
 	void Evaluate();
 	void HoldDice();
-	void DieValueCount(int *);
 	void CalculateScore(int *);
-	int GetMode(int *);
 	void Reset();
 	
 	Player();

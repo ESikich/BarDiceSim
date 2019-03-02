@@ -1,12 +1,6 @@
 #include "Player.h"
 
-void Player::DieValueCount(int * dvc) {
-	for (int i = 0; i < 5; i++) {
-		dvc[cup_.dice_[i].Value()]++;
-	}
-}
-
-int Player::GetMode(int * dvc) {
+int Player::GetMode(int * dvc) const{
 	int dieVal = 0;
 	int tempCount = 0;
 
@@ -18,25 +12,6 @@ int Player::GetMode(int * dvc) {
 	}
 
 	return dieVal;
-}
-
-void Player::CalculateScore(int * dvc) {
-	int dieVal = 0;
-	int result = 0;
-
-	dieVal = GetMode(dvc);
-
-	if (goal_ == 0) {
-		goal_ = dieVal;
-	}
-
-	result = (dvc[1] + dvc[dieVal]) * 10 + dieVal;
-	
-	if (result == 61) {
-		score_ = 0;
-	}
-
-	score_ = result;
 }
 
 void Player::Evaluate() {
@@ -65,6 +40,25 @@ void Player::HoldDice() {
 			}
 		}
 	}
+}
+
+void Player::CalculateScore(int * dvc) {
+	int dieVal = 0;
+	int result = 0;
+
+	dieVal = GetMode(dvc);
+
+	if (goal_ == 0) {
+		goal_ = dieVal;
+	}
+
+	result = (dvc[1] + dvc[dieVal]) * 10 + dieVal;
+	
+	if (result == 61) {
+		score_ = 0;
+	}
+
+	score_ = result;
 }
 
 void Player::Reset(){
