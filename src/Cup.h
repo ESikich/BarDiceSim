@@ -14,12 +14,7 @@ public:
 
 	void Reset();
 	void Shake();
-/*	void Evaluate();
-	void HoldDice();*/
 	void ShowDice();
-	/*void DieValueCount(int *);
-	void CalculateScore(int *);
-	int GetMode(int *);*/
 
 	Cup();
 	Cup(bool);
