@@ -3,10 +3,10 @@
 
 class Die{
 	int value_;
-	bool holding_;
+	bool is_held_;
 	
 public:
-	bool Held() const;
+	bool IsHeld() const;
 	int Value() const;
 	
 	void Roll();

@@ -1,8 +1,8 @@
 #include "Die.h"
 #include <cstdlib>
 
-bool Die::Held() const{
-	return holding_;
+bool Die::IsHeld() const{
+	return is_held_;
 }
 
 int Die::Value() const{
@@ -10,23 +10,23 @@ int Die::Value() const{
 }
 
 void Die::Roll(){
-	if (holding_ == false){
+	if (is_held_ == false){
 		value_ = std::rand() % 6 + 1;
 	}
 }
 
 void Die::Hold(){
-	holding_ = true;
+	is_held_ = true;
 }
 
 void Die::Init(){
-	holding_ = false;
+	is_held_ = false;
 	value_ = -1;
 }
 
 void Die::Reset(){
 	value_ = -1;
-	holding_ = false;
+	is_held_ = false;
 }
 
 Die::Die(){
