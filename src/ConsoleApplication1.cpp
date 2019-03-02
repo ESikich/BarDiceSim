@@ -3,9 +3,9 @@
 #include <fstream>
 #include <time.h>
 #include <vector>
-#include "Cup.h"
+//#include "Cup.h"
 #include "GameHandler.h"
-#include "Die.h"
+//#include "Die.h"
 #include "Player.h"
 
 using std::vector;

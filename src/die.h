@@ -6,11 +6,14 @@ class Die{
 	bool holding_;
 	
 public:
+	bool Held() const;
+	int Value() const;
+	
 	void Roll();
-	void Reset();
-	bool Held();
 	void Hold();
-	int Value();
+	
+	void Init();
+	void Reset();
 	
 	Die();
 	~Die();
