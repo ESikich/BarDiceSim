@@ -7,9 +7,6 @@ class Cup
 {
 
 public:
-	bool farming_;
-	int goal_;
-	int score_;
 	Die dice_[5] ={Die(), Die(), Die(), Die(), Die()};
 
 	void Reset();
