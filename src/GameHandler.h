@@ -23,10 +23,10 @@ public:
 	bool playerWin_;
 	vector<Player>* player_;
 
-	void TakeTurns(int);
-	void InitPlayers(vector<Player>*);
+	void TakeTurns(const int&);
+	void InitPlayers(vector<Player>&);
 	void CheckScores();
-	void CheckWinner(int);
+	void CheckWinner(const int&);
 	void Reset();
 	
 	GameHandler();

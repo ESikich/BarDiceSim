@@ -1,5 +1,9 @@
 #include "Die.h"
 #include <cstdlib>
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 bool Die::IsHeld() const{
 	return is_held_;
@@ -7,6 +11,10 @@ bool Die::IsHeld() const{
 
 int Die::Value() const{
 	return value_;
+}
+
+void Die::SetValue(int v){
+	value_ = v;
 }
 
 void Die::Roll(){

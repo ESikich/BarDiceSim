@@ -1,8 +1,8 @@
 #include "GameHandler.h"
 
-void GameHandler::TakeTurns(int rolls) {
+void GameHandler::TakeTurns(const int &rolls) {
 	for (std::vector<Player>::iterator it = player_->begin(); it != player_->end(); ++it) {
-		for (int i = 0; i < rolls; i++) {
+		for (int i = 0; i < rolls; ++i) {
 			it->cup_.Shake();
 			it->Evaluate();
 			it->HoldDice();
@@ -10,19 +10,19 @@ void GameHandler::TakeTurns(int rolls) {
 	}
 }
 
-void GameHandler::InitPlayers(vector<Player>* player) {
-	player_ = player;
+void GameHandler::InitPlayers(vector<Player> &player) {
+	player_ = &player;
 }
 
 void GameHandler::CheckScores() {
-	for (int i = 0; i < player_->size(); i++) {
+	for (int i = 0; i < player_->size(); ++i) {
 		if (player_->at(i).score_ >= topScore_) {
 			tempWinner_ = i;
 		}
 	}
 }
 
-void GameHandler::CheckWinner(int t){
+void GameHandler::CheckWinner(const int& t){
 	topScore_ = t;
 	if (tempWinner_ != -1) {
 		if (player_->at(tempWinner_).score_ == topScore_) {
@@ -47,10 +47,10 @@ void GameHandler::CheckWinner(int t){
 	}
 
 	if (playerWin_ == true) {
-		player_->front().wins_++;
+		++player_->front().wins_;
 	}
 	else {
-		player_->front().losses_++;
+		++player_->front().losses_;
 	}
 }
 

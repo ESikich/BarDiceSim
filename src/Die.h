@@ -9,6 +9,8 @@ public:
 	bool IsHeld() const;
 	int Value() const;
 	
+	void SetValue(int);
+	
 	void Roll();
 	void Hold();
 	

@@ -14,34 +14,35 @@ using std::endl;
 using std::atoi;
 
 int main(int argc, char **argv){
-	if(argc < 4 || argc > 4){
+	if(argc < 5 || argc > 5){
 		cout << "Incorrect number of arguments." << endl;
-		cout << "Usage - dice [players] [score] [shakes]" << endl;
+		cout << "Usage - dice [players] [score] [shakes] [#of simulations]" << endl;
 		return 1;
 	}
 	
-	srand((unsigned int)time(NULL));
+	srand(time(NULL));
 	
 	int numPlayers = 2;
 	int numRolls = 3;
 	int numRounds = 1000000;
 	int topScore = 56;
-	int scoreList[20] = {22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 42, 43, 44, 45, 46, 52, 53, 54, 55, 56};
+//	int scoreList[20] = {22, 23, 24, 25, 26, 32, 33, 34, 35, 36, 42, 43, 44, 45, 46, 52, 53, 54, 55, 56};
 	vector<Player> player;
 	GameHandler game = GameHandler();
 
 	numPlayers = atoi(argv[1]);
 	topScore = atoi(argv[2]);
 	numRolls = atoi(argv[3]);
+	numRounds = atoi(argv[4]);
 	
-	for(int i = 0; i < 3; i++){
+	for(int i = 0; i < numPlayers; i++){
 		player.push_back(Player());
 	}
 	
-	game.InitPlayers(&player);
+	game.InitPlayers(player);
 	
-	//	for (int h = 0; h < 20; h++) {
-	//topScore = scoreList[h];
+//	for (int h = 0; h < 20; h++) {
+//	topScore = scoreList[h];
 	for (int rounds = 0; rounds < numRounds; rounds++) {
 		game.TakeTurns(numRolls);
 		game.CheckScores();			
@@ -55,7 +56,7 @@ int main(int argc, char **argv){
 	cout <<"Total - " << percentage << "%" << endl;
 	player.front().wins_ = 0;
 	player.front().losses_ = 0;
-	
+//	}
 	
 	cout << "Complete." << endl;
 	return 0;
